@@ -1,0 +1,12 @@
+- name: Install and start Nginx
+  hosts: frontend # 	Target frontend group
+  become: yes     # Execute with elevated privileges (usually root)
+  tasks:
+    - name: Install Nginx
+      ansible.builtin.package:  # Ansible module to manage packages
+        name: nginx      # Package to install
+        state: present   # state: present means install Nginx if it is missing. If already installed, Ansible normally makes no change.
+    - name: Start Nginx
+      ansible.builtin.service:  # Ansible module to manage services
+        name: nginx      # Service to start
+        state: started   # state: started means start the service if it is not running. If already running, Ansible normally makes no change.
