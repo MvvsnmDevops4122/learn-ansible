@@ -1,6 +1,10 @@
-- name: variables from inventory
-  hosts: frontend
+# Playbook to demonstrate variables from inventory
+
+- name: Variables from inventory
+  hosts: frontend              # Execute on frontend group
+
   tasks:
-   - name: print the variables
-     debug:
-      msg: "Hi, I am learning {{ course }} from {{ trainer }}, duration is {{ duration }}"
+    - name: Print the variables
+      ansible.builtin.debug:   # Display variable values
+        msg: "Hi, I am learning {{ course }} from {{ trainer }}, duration is {{ duration }}"
+        # Access variables defined in inventory.ini

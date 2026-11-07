@@ -1,0 +1,13 @@
+# Playbook to demonstrate command-line arguments
+
+- name: Print greeting
+  hosts: local
+  connection: local
+
+  tasks:
+    - name: Print greeting
+      ansible.builtin.debug:
+        msg: "Hello {{ person_name }}"  # Access variable passed through CLI
+
+
+# 
