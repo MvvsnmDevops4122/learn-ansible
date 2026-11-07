@@ -1,0 +1,6 @@
+- name: ping demo # playbook name
+  hosts: local   # Target host or inventory group named local
+  connection: local # execute commands directly on ansible control nodes(if local not req credentials)
+  tasks:   # define the task to execute # tasks==modules==collections
+  - name: ping localhost # discription of the task
+    ping:                # ansbile ping module
