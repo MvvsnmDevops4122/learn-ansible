@@ -7,7 +7,6 @@
    - name: print the variables
      debug:
       msg: "Hi, I got {{ property }} from my father"
-  tasks:
    - name: print the variables again
      vars:
       property: "10acres"
