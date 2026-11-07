@@ -1,3 +1,5 @@
-course: "ansible"
-trainer: "satya"
-duration: "10 hours"
+# Course information stored as variables
+
+course: "Ansible"                   # Course name
+trainer: "Sivakumar Reddy M"         # Trainer name
+duration: "10 hrs"                   # Course duration

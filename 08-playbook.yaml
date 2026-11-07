@@ -1,0 +1,20 @@
+# Playbook to demonstrate variables from user input
+
+- name: Variables from prompt
+
+  hosts: local
+  connection: local
+
+  vars_prompt:                  # Ask the user for input during execution
+    - name: username            # Variable to store username
+      prompt: Please enter your username
+      private: false            # Display the entered username
+
+    - name: password            # Variable to store password
+      prompt: Please enter your password
+      private: true             # Hide the entered password
+
+  tasks:
+    - name: Print the confidential information
+      ansible.builtin.debug:
+        msg: "Username is: {{ username }}, password is {{ password }}"

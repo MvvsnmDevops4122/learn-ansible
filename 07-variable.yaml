@@ -1,9 +1,15 @@
-- name: variables from files
-  hosts: local
-  connection: local
-  vars_files:
-   - course.yaml            
+# This playbook shows how to use variables stored in a separate YAML file.
+
+- name: Variables from files
+
+  hosts: local                 # Target host or inventory group
+  connection: local            # Execute tasks on Ansible control node
+
+  vars_files:                  # Load variables from an external YAML file
+    - course.yaml              # File containing course-related variables
+
   tasks:
-   - name: print course innformation
-     debug:
-      msg: "Hi, I am learning {{ course }} from {{ trainer }}, duration is {{ duration }}"
+    - name: Print course information   # Task description
+      ansible.builtin.debug:           # Debug module to display information
+        msg: "Hi, I am learning {{ course }} from {{ trainer }}, duration is {{ duration }}"
+                                     # {{ }} is used to access variable values

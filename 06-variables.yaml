@@ -1,14 +1,22 @@
-- name: demo on task level variables
-  hosts: local
-  connection: local
-  vars:
-   property: "100acres"
+# Playbook to demonstrate task-level variables
+
+- name: Demo on task-level variables
+
+  hosts: local                  # Target host
+  connection: local             # Execute on Ansible control node
+
+  vars:                         # Play-level variables
+    property: "100 acres"       # Available to all tasks in this play
+
   tasks:
-   - name: print the variables
-     debug:
-      msg: "Hi, I got {{ property }} from my father"
-   - name: print the variables again
-     vars:
-      property: "10acres"
-     debug:
-      msg: "Hi, I got {{ property }} from my father"
+    - name: Print the variables
+      ansible.builtin.debug:    # debug also fine
+        msg: "Hi, I got {{ property }} from my father"
+        # Uses the play-level variable: 100 acres
+
+    - name: Print the variables again
+      vars:                     # Task-level variables
+        property: "10 acres"    # Overrides the play-level value for this task only
+      ansible.builtin.debug:
+        msg: "Hi, I got {{ property }} from my father"
+        # Uses the task-level variable: 10 acres
