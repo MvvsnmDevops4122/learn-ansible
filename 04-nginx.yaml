@@ -10,3 +10,4 @@
       ansible.builtin.service:  # Ansible module to manage services
         name: nginx      # Service to start
         state: started   # state: started means start the service if it is not running. If already running, Ansible normally makes no change.
+        enabled: yes 

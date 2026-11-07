@@ -1,11 +1,11 @@
-- name: demo on variables
+- name: demo on play level variables
   hosts: local
   connection: local
-  vars:
+  vars:             # define variables in play leave
    course: "ansible"
    trainer: "satya"
    duration: "10 hours"
   tasks:
-   - name: print the variables
+   - name: print the variables 
      debug:
       msg: "Hi, I am learning {{ course }} from {{ trainer }}, duration is {{ duration }}"
