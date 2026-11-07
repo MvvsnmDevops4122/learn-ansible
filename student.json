@@ -1,0 +1,24 @@
+{
+    "firstName": "Satya",
+    "lastName": "M",
+    "dob": "01-01-01",
+    "addresses": [
+        {
+            "type": "permanent",
+            "doorNo": "1-566",
+            "streetName": "Arun",
+            "city": "Hyderabad"
+        },
+        {
+            "type": "temporary",
+            "doorNo": "1-566",
+            "streetName": "Arun",
+            "city": "Hyderabad"
+        }
+    ],
+    "skills": {
+        "OS": "Linux",
+        "IDE": "VsCode",
+        "CM": "ansible"
+    }
+}
