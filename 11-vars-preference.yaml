@@ -17,7 +17,7 @@
 
   tasks:
     - name: Print course information
-      vars:                       # Task-level variables
-        course: "ansible from task"
+      # vars:                       # Task-level variables
+      #   course: "ansible from task"
       ansible.builtin.debug:
         msg: "Hi, I am learning {{ course }}"
