@@ -6,7 +6,7 @@
   connection: local            # Execute tasks on Ansible control node
 
   vars_files:                  # Load variables from an external YAML file
-    - course.yaml              # File containing course-related variables
+    - course.yaml              # File containing course-related variabless
 
   tasks:
     - name: Print course information   # Task description

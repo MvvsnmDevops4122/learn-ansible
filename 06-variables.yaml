@@ -5,7 +5,7 @@
   hosts: local                  # Target host
   connection: local             # Execute on Ansible control node
 
-  vars:                         # Play-level variables
+  vars:                         # Play-level variable's
     property: "100 acres"       # Available to all tasks in this play
 
   tasks:

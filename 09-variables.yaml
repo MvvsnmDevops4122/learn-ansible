@@ -5,6 +5,6 @@
 
   tasks:
     - name: Print the variables
-      ansible.builtin.debug:   # Display variable values
+      ansible.builtin.debug:   # Display variable value's
         msg: "Hi, I am learning {{ course }} from {{ trainer }}, duration is {{ duration }}"
         # Access variables defined in inventory.ini
