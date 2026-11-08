@@ -10,4 +10,4 @@
         msg: "Hello {{ person_name }}"  # Access variable passed through CLI
 
 
-# 
+# ansible-playbook -i inventory.ini 10-variables.yaml -e "ansible_user=satya"

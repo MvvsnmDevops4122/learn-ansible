@@ -1,0 +1,23 @@
+# Playbook to demonstrate variable precedence(priority)
+
+- name: Variables from files
+  hosts: local
+  connection: local
+
+  vars:                           # Play-level variable
+    course: "ansible from PLAY"
+
+  vars_prompt:                    # Ask user for input
+    - name: course
+      prompt: Please enter your course
+      private: false
+
+  vars_files:                     # Load variables from external file
+    - course.yaml
+
+  tasks:
+    - name: Print course information
+      vars:                       # Task-level variable
+        course: "ansible from task"
+      ansible.builtin.debug:
+        msg: "Hi, I am learning {{ course }}"

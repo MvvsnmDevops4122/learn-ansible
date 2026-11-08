@@ -3,3 +3,5 @@
 course: "Ansible"                   # Course name
 trainer: "Sivakumar Reddy M"         # Trainer name
 duration: "10 hrs"                   # Course duration
+
+person: "ansible from file"
