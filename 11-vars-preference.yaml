@@ -12,8 +12,8 @@
       prompt: Please enter your course
       private: false
 
-  vars_files:                     # Load variables from external file
-    - course.yaml
+  # vars_files:                     # Load variables from external file
+  #   - course.yaml
 
   tasks:
     - name: Print course information
