@@ -7,10 +7,10 @@
   vars:                           # Play-level variable
     course: "ansible from PLAY"
 
-  vars_prompt:                    # Ask user for input
-    - name: course
-      prompt: Please enter your course
-      private: false
+  # vars_prompt:                    # Ask user for input
+  #   - name: course
+  #     prompt: Please enter your course
+  #     private: false
 
   # vars_files:                     # Load variables from external file
   #   - course.yaml
