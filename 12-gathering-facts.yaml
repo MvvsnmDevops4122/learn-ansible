@@ -19,3 +19,19 @@
          Private IP: {{ ansible_facts.default_ipv4.address }} 
 
 
+# Specify the inventory file while executing the playbook
+# execution:: ansible-playbook -i inventory.ini 12-gathering-facts.yaml
+
+# Ansible configuration:
+# ansible.cfg -> [defaults] -> stdout_callback=yaml
+# stdout_callback=yaml is an Ansible configuration setting.
+# Add it under the [defaults] section in ansible.cfg.
+# It displays task output new line readabilty formate.
+
+# Specify the default inventory file in ansible.cfg under the [defaults] section.(inventory=inventory.ini)
+# This allows Ansible to use inventory.ini automatically.
+
+
+# Execute the playbook without specifying -i inventory.ini
+# because the default inventory file is already configured in ansible.cfg.
+# execution:: ansible-playbook 12-gathering-facts.yaml
