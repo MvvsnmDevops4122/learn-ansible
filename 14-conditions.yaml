@@ -11,11 +11,11 @@
       private: false # Display the entered number
 
   tasks:
-    - name:  is even
+    - name: is even
       debug:
         msg: "Given number: {{ number }} is even"
       when: number % 2 == 0  # Condition to check if the number is even
-    - name:  is odd
+    - name: is odd
       debug:
         msg: "Given number: {{ number }} is odd"
       when: number % 2 != 0  # Condition to check if the number is odd
