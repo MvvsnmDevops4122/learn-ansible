@@ -1,0 +1,15 @@
+- name: print OS family
+  hosts: local
+  connection: local
+
+  tasks:
+    - name: Os distribution is RedHat
+      debug:
+        msg: "OS distribution is RedHat"
+      when: ansible_facts.os_family == "RedHat"  # Execute if OS family is RedHat
+
+    - name: Os distribution is Ubuntu
+      debug:
+        msg: "OS distribution is Ubuntu"
+      when: ansible_facts.os_family == "Ubuntu"  # Execute if OS family is Ubuntu
+        
