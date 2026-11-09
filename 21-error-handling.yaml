@@ -5,20 +5,21 @@
   become: true
 
   tasks:
+    # Check whether roboshop user exists or not
     - name: Check whether roboshop user exists or not
       command: id roboshop
       register: user_output  # Register command output in a variable named user_output
-      ignore_errors: true    # Ignore errors and continue execution
+      ignore_errors: true    # Ignore errors and continue next task execution
 
     # Print the output of the command
     - name: Print the output of the command
       debug:
         msg: "{{ user_output }}"
-    
+
     # Create roboshop user if it does not exist
     - name: Create roboshop user
       command: useradd roboshop
       when: user_output.rc != 0  # Execute only if the user does not exist
 
   # rc=1 failed
-  # rc-0 succeess
+  # rc=0 success

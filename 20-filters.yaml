@@ -1,7 +1,6 @@
 - name: Demo on filters
   hosts: local
-  connection: local
-
+  connection: local 
   vars:
     courses: "ansible,docker,kubernetes"  # String variable
     information:
@@ -10,27 +9,27 @@
       - Molleti
     topic: "ANSIBLE"  # String variable
     trainer: "satya"  # String variable
-
   tasks:
     - name: Print person name
       debug:
         msg: "Hello {{ person_name | default('satya') }}"  # Use 'satya' if person_name is not defined
-
-    # | - filter
+# | - filter
     - name: convert string to list
       debug:
-        # split(',') – Convert string to list using split filter
-        # trim – Removes extra spaces from each item using trim filter.
-        msg: "Courses I am learning: {{ courses | split(',') | trim }}"
-
+      # split(',') – # Convert string to list using split filter
+      # trim – Removes extra spaces from each item using trim filter.
+        msg: "Courses I am learning: {{ courses | split(',') | trim }}"  
     - name: convert list to string
       debug:
         msg: "My full name is: {{ information | join(' ') }}"  # Convert list to string using join filter
-
+    
     - name: convert string to lowercase
       debug:
         msg: "My topic is: {{ topic | lower }}"  # Convert string to lowercase using lower filter
-
     - name: convert string to uppercase
       debug:
         msg: "My trainer is: {{ trainer | upper }}"  # Convert string to uppercase using upper filter
+    
+    
+        
+        
