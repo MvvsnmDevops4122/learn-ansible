@@ -1,11 +1,15 @@
-- name: demo on loops
+# Playbook to demonstrate loops in Ansible
+
+- name: Demo on loops
   hosts: local
   connection: local
+
   tasks:
+    # Print each course name one by one
     - name: Print the courses using loop
-      debug:
-        msg: "I am learning {{ item }}"
-      loop:
+      debug:                  # Ansible module to display messages
+        msg: "I am learning {{ item }}"  # item is a special variable that holds the current value
+      loop:                   # Repeats the task for each value
         - ansible
         - docker
         - kubernetes

@@ -1,0 +1,16 @@
+- name: Install packages
+  hosts: local
+  connection: local
+  become: true
+  vars:
+    packages:
+      - git
+      - curl
+      - wget
+  tasks:
+    - name: Install packages using loop
+      package:
+        name: "{{ item }}"
+        state: present
+      loop: "{{ packages }}"
+      
