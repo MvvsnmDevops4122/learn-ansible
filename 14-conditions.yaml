@@ -2,8 +2,13 @@
   hosts: local
   connection: local
 
-  vars:
-    number: 10
+  # vars:
+  #   number: 10
+
+  vars_prompt:
+    - name: number # Variable to store the number
+      prompt: Please enter a number
+      private: false # Display the entered number
 
   tasks:
     - name:  is even
