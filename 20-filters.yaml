@@ -3,6 +3,10 @@
   connection: local 
   vars:
     courses: "ansible,docker,kubernetes"  # String variable
+    name:
+      - Siva
+      - Sankar
+      - Molleti
   tasks:
     - name: Print person name
       debug:
@@ -13,6 +17,9 @@
       # split(',') – # Convert string to list using split filter
       # trim – Removes extra spaces from each item using trim filter.
         msg: "Courses I am learning: {{ courses | split(',') | trim }}"  
+    - name: convert list to string
+      debug:
+        msg: "My full name is: {{ name | join(' ') }}"  # Convert list to string using join filter
     
         
         
