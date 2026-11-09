@@ -1,0 +1,20 @@
+# Playbook to install or remove multiple packages using loops
+
+- name: Install packages
+  hosts: local
+  connection: local
+  become: true  # Execute tasks with root privileges
+
+  vars:  # Define variables
+    packages:  # List of packages with their desired states
+      - {name: 'git', state: 'absent'}
+      - {name: 'curl', state: 'present'}
+      - {name: 'wget', state: 'absent'}
+
+  tasks:
+    # Install or remove packages based on their state
+    - name: Manage packages using loop
+      package:  # Module to manage packages across different OS families
+        name: "{{ item.name }}"  # Access the package name from the current item
+        state: "{{ item.state }}"  # Define whether to install or remove the package
+      loop: "{{ packages }}"  # Repeat the task for every package in the list

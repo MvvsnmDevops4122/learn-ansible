@@ -1,16 +1,20 @@
+# Playbook to install multiple packages using loops
+
 - name: Install packages
   hosts: local
   connection: local
-  become: true
-  vars:
-    packages:
+  become: true  # Execute tasks with root privileges
+
+  vars:  # Define variables
+    packages:  # User-defined variable containing package names
       - git
       - curl
       - wget
+
   tasks:
+    # Install each package from the packages list
     - name: Install packages using loop
-      package:
-        name: "{{ item }}"
-        state: present
-      loop: "{{ packages }}"
-      
+      package:  # Ansible module to manage packages across different OS families
+        name: "{{ item }}"  # item is a special variable holding the current package name
+        state: present  # Ensure the package is installed
+      loop: "{{ packages }}"  # Repeat the task for every package in the packages list
