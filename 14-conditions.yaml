@@ -1,4 +1,10 @@
-- name: even or odd number
+# This playbook checks whether the user-provided number is even or odd.
+# vars_prompt is used to get input from the user.
+# The when keyword is used to execute tasks based on conditions.
+
+---
+
+- name: Check whether a number is even or odd
   hosts: local
   connection: local
 
@@ -6,16 +12,17 @@
   #   number: 10
 
   vars_prompt:
-    - name: number # Variable to store the number
-      prompt: Please enter a number
-      private: false # Display the entered number
+    - name: number
+      prompt: "Please enter a number"
+      private: false  # Display the entered number
 
   tasks:
-    - name: is even
+    - name: Check if the number is even
       debug:
         msg: "Given number: {{ number }} is even"
-      when: number % 2 == 0  # Condition to check if the number is even
-    - name: is odd
+      when: number % 2 == 0  # Execute if the number is divisible by 2
+
+    - name: Check if the number is odd
       debug:
         msg: "Given number: {{ number }} is odd"
-      when: number % 2 != 0  # Condition to check if the number is odd
+      when: number % 2 != 0  # Execute if the number is not divisible by 2
