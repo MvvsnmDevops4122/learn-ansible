@@ -1,0 +1,12 @@
+- name: Demo on error handling
+  hosts: local
+  connection: local 
+  become: true  
+  tasks:
+  - name: check roboshop user is exist or not
+    command: id roboshop
+    register: user_output # Register the output of the command to a variable named user_output
+    ignore_errors: true  # Ignore errors and continue execution
+  - name: print the output of the command
+    debug:
+      msg: "User roboshop exists: {{ user_output }}"
