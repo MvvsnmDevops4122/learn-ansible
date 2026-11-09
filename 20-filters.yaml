@@ -12,7 +12,7 @@
       debug:
       # Convert string to list using split filter
       # Trim whitespace from each course name using trim filter
-        msg: "Courses I am learning: {{ course | split(',') | trim }}"  
+        msg: "Courses I am learning: {{ courses | split(',') | trim }}"  
     
         
         
