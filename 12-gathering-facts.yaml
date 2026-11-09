@@ -1,0 +1,8 @@
+- name: print the facts gathered from the target host
+  hosts: local
+  connection: local
+
+  tasks:
+    - name: Print the facts
+      debug:
+        msg: "{{ ansible_facts }}"  # Access the gathered facts using ansible_facts variable
