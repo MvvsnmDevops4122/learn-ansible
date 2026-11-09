@@ -9,4 +9,4 @@
     ignore_errors: true  # Ignore errors and continue execution
   - name: print the output of the command
     debug:
-      msg: "User roboshop exists: {{ user_output }}"
+      msg: "{{ user_output }}"
