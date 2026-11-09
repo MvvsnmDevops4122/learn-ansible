@@ -1,6 +1,7 @@
 - name: Install nginx on RedHat and Ubuntu
   hosts: local
   connection: local
+  become: true
 
   tasks:
     - name: Install nginx on RedHat
