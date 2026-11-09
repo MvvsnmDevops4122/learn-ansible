@@ -8,13 +8,8 @@
   hosts: local
   connection: local
 
-  # vars:
-  #   number: 10
-
-  vars_prompt:
-    - name: number
-      prompt: "Please enter a number"
-      private: false  # Display the entered number
+  vars:
+    number: 10
 
   tasks:
     - name: Check if the number is even
