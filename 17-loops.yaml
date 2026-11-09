@@ -1,0 +1,11 @@
+- name: demo on loops
+  hosts: local
+  connection: local
+  tasks:
+    - name: Print the courses using loop
+      debug:
+        msg: "I am learning {{ item }}"
+      loop:
+        - ansible
+        - docker
+        - kubernetes

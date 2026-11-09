@@ -1,17 +1,25 @@
+# Playbook to install Nginx on RedHat and Ubuntu systems
 - name: Install nginx on RedHat and Ubuntu
   hosts: local
   connection: local
-  become: true
+  become: true  # Execute tasks with root privileges
 
   tasks:
+    # Install Nginx on RedHat-based systems (Amazon Linux, RHEL, CentOS)
     - name: Install nginx on RedHat
-      ansible.builtin.yum:     # google "ansible RedHat package module"
+      ansible.builtin.dnf:  # Package manager module for RedHat-based systems
         name: nginx
-        state: present
+        state: present      # Install Nginx if it is not already installed
       when: ansible_facts.os_family == "RedHat"  # Execute only if OS family is RedHat
 
+    # Install Nginx on Debian-based systems (Ubuntu)
     - name: Install nginx on Ubuntu
-      ansible.builtin.apt:     # google "ansible Debian package module"
+      ansible.builtin.apt:  # Package manager module for Debian-based systems
         name: nginx
-        state: present
+        state: present      # Install Nginx if it is not already installed
       when: ansible_facts.os_family == "Debian"  # Execute only if OS family is Debian (Ubuntu)
+
+
+
+  # ansible.builtin.dnf/dnf both are used to install packages on RedHat-based systems (Amazon Linux, RHEL, CentOS).
+  # ansible.builtin.apt/apt both are used to install packages on Debian-based systems (Ubuntu).s
