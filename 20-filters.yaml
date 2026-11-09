@@ -10,9 +10,9 @@
 # | - filter
     - name: convert string to list
       debug:
-      # Convert string to list using split filter
-      # Trim whitespace from each course name using trim filter
-        msg: "Courses I am learning: {{ courses | split(',') | map('trim') | list }}"  
+      # split(',') – # Convert string to list using split filter
+      # trim – Removes extra spaces from each item using trim filter.
+        msg: "Courses I am learning: {{ courses | split(',') | trim }}"  
     
         
         
