@@ -1,17 +1,24 @@
+# Playbook to demonstrate error handling in Ansible
 - name: Demo on error handling
   hosts: local
-  connection: local 
-  become: true  
-  tasks:
-  - name: check roboshop user is exist or not
-    command: id roboshop
-    register: user_output # Register the output of the command to a variable named user_output
-    ignore_errors: true  # Ignore errors and continue execution
-    
-  - name: print the output of the command
-    debug:
-      msg: "{{ user_output }}"
+  connection: local
+  become: true
 
-  - name: create roboshop user
-    command: useradd roboshop
-    when: user_output.rc != 0  # Execute this task only if the previous command failed (user does not exist)
+  tasks:
+    - name: Check whether roboshop user exists or not
+      command: id roboshop
+      register: user_output  # Register command output in a variable named user_output
+      ignore_errors: true    # Ignore errors and continue execution
+
+    # Print the output of the command
+    - name: Print the output of the command
+      debug:
+        msg: "{{ user_output }}"
+    
+    # Create roboshop user if it does not exist
+    - name: Create roboshop user
+      command: useradd roboshop
+      when: user_output.rc != 0  # Execute only if the user does not exist
+
+  # rc=1 failed
+  # rc-0 succeess
