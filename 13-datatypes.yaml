@@ -1,28 +1,38 @@
-- name: print the data types 
+# This playbook demonstrates different data types in Ansible variables.
+# It defines String, Integer, Boolean, List, Dictionary, and Float variables.
+# The type_debug filter is used to identify and print the data type of each variable.
+
+---
+- name: Print the data types
   hosts: local
   connection: local
+
   vars:
-   course: "AIOPS with DevSecops on AWS" #strin
-   duration_in_hours: 150 # integer
-   is_course_completed: false # boolean
-   topics:
-    - Linux
-    - Shell Scripting
-    - Ansible
-   more_details:
-    trainer: "satya M"
-    months: 4 # integer
-   exact_duration_in_months: 4.5 # float
+    course: "AIOPS with DevSecops on AWS"  # String
+    duration_in_hours: 150                 # Integer
+    is_course_completed: false             # Boolean
+
+    topics:                                # List
+      - Linux
+      - Shell Scripting
+      - Ansible
+
+    more_details:                          # Dictionary
+      trainer: "satya M"
+      months: 4                            # Integer
+
+    exact_duration_in_months: 4.5          # Float
+
   tasks:
-   - name: print the variables 
-     debug:
-      msg: |
-        name: {{ course }} : {{ course | type_debug }}
-        duration: {{ duration_in_hours }} : {{ duration_in_hours | type_debug }}
-        is completed: {{ is_course_completed }} : {{ is_course_completed | type_debug }}
-        topics: {{ topics }} : {{ topics | type_debug }}
-        more details: {{ more_details }} : {{ more_details | type_debug }}  
-        duration: {{ exact_duration_in_months }} : {{ exact_duration_in_months | type_debug }}
+    - name: Print the variables and their data types
+      debug:
+        msg: |
+          Course: {{ course }} : {{ course | type_debug }}
+          Duration: {{ duration_in_hours }} : {{ duration_in_hours | type_debug }}
+          Is Completed: {{ is_course_completed }} : {{ is_course_completed | type_debug }}
+          Topics: {{ topics }} : {{ topics | type_debug }}
+          More Details: {{ more_details }} : {{ more_details | type_debug }}
+          Exact Duration: {{ exact_duration_in_months }} : {{ exact_duration_in_months | type_debug }}
 
 
-# type_debug is a filter in Ansible that returns the data type of a variable. 
+# ansible-playbook 13-datatypes.yaml
