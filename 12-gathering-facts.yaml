@@ -8,10 +8,14 @@
         msg: "{{ ansible_facts }}"  # Access the gathered facts using ansible_facts variable
     - name: print some information from the gathered facts
       debug:
+        # Access the OS family information from the gathered facts
+        # Other way to access the OS family information from the gathered facts
+        # Access the private IP address from the gathered facts
+        # Other way to access the private IP address from the gathered facts
         msg: |
-         OS Family: {{ ansible_facts['os_family'] }} # Access the OS family information from the gathered facts
-         OS Family: {{ ansible_facts.os_family }} # Other way to access the OS family information from the gathered facts      
-         Private IP: {{ ansible_facts['default_ipv4']['address'] }} # Access the private IP address from the gathered facts
-         Private IP: {{ ansible_facts.default_ipv4.address }} # Other way to access the private IP address from the gathered facts
+         OS Family: {{ ansible_facts['os_family'] }} 
+         OS Family: {{ ansible_facts.os_family }}       
+         Private IP: {{ ansible_facts['default_ipv4']['address'] }} 
+         Private IP: {{ ansible_facts.default_ipv4.address }} 
 
 
