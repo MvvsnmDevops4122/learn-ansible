@@ -10,4 +10,4 @@
 # | - filter
     - name: convert string to list
       debug:
-        msg: "Courses I am learning: {{ courses | split(',') }}"  # Convert string to list using split filter
+        msg: "Courses I am learning: {{ courses | split('') }}"  # Convert string to list using split filter
