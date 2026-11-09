@@ -1,0 +1,16 @@
+- name: Install nginx on RedHat and Ubuntu
+  hosts: local
+  connection: local
+
+  tasks:
+    - name: Install nginx on RedHat
+      ansible.builtin.yum:     # google "ansible RedHat package module"
+        name: nginx
+        state: present
+      when: ansible_facts.os_family == "RedHat"  # Execute only if OS family is RedHat
+
+    - name: Install nginx on Ubuntu
+      ansible.builtin.apt:     # google "ansible Debian package module"
+        name: nginx
+        state: present
+      when: ansible_facts.os_family == "Debian"  # Execute only if OS family is Debian (Ubuntu)

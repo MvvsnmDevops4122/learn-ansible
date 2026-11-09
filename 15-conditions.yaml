@@ -1,15 +1,18 @@
-- name: print OS family
+# Playbook to check the OS family and print the OS distribution
+- name: Print OS family
   hosts: local
   connection: local
+  
 
   tasks:
-    - name: Os distribution is RedHat
+    # Check whether the OS family is RedHat
+    - name: OS distribution is RedHat
       debug:
         msg: "OS distribution is RedHat"
-      when: ansible_facts.os_family == "RedHat"  # Execute if OS family is RedHat
+      when: ansible_facts.os_family == "RedHat"  # Execute only if OS family is RedHat
 
-    - name: Os distribution is Ubuntu
+    # Check whether the OS family is Ubuntu
+    - name: OS distribution is Ubuntu
       debug:
         msg: "OS distribution is Ubuntu"
-      when: ansible_facts.os_family == "Ubuntu"  # Execute if OS family is Ubuntu
-        
+      when: ansible_facts.os_family == "Ubuntu"  # Execute only if OS family is Ubuntu
