@@ -3,7 +3,7 @@
   connection: local 
   vars:
     courses: "ansible,docker,kubernetes"  # String variable
-    name:
+    information:
       - Siva
       - Sankar
       - Molleti
@@ -21,7 +21,7 @@
         msg: "Courses I am learning: {{ courses | split(',') | trim }}"  
     - name: convert list to string
       debug:
-        msg: "My full name is: {{ name | join(' ') }}"  # Convert list to string using join filter
+        msg: "My full name is: {{ information | join(' ') }}"  # Convert list to string using join filter
     
     - name: convert string to lowercase
       debug:
