@@ -1,7 +1,13 @@
+# Playbook to demonstrate idempotency in Ansible
+
 - name: Demo on idempotency
   hosts: local
   connection: local
+  become: true  # Execute tasks with root privileges
+
   tasks:
-  - name: create user
-    user:
-     name: roboshop # useradd roboshop
+    # Create roboshop user 
+    - name: Create user
+      user:  # Ansible module to manage Linux users
+        name: roboshop  # (equivalent to useradd roboshop)
+        state: present  # Ensure the user exists
