@@ -10,4 +10,8 @@
     - name: Create user
       user:  # Ansible module to manage Linux users
         name: roboshop  # (equivalent to useradd roboshop)
-        state: present  # Ensure the user exists
+        state: present  # Create the user if it does not exist.
+
+
+# present – Create the user if it does not exist.
+# absent – Delete the user if it exists.

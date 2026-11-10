@@ -1,0 +1,11 @@
+- name: Demo on command and shell module
+  hosts: local
+  connection: local
+  tasks:
+  - name: test the command module
+    command: cat /etc/passwd | grep ec2-user
+    register: ec2_user_output
+
+  - name: print the output
+    debug:
+     msg: {{ ec2_user_output }}
