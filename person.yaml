@@ -1,55 +1,31 @@
+---
+# Playbook to demonstrate Ansible variable variations
+
 - name: Print greeting
-
   hosts: local
-
   connection: local
 
-
-
-  # Define a variable at the play level
-
+  # 1. Play-level variable
   vars:
-
     person_name: "Play-Level Satya"
 
-
-
-  # Load variables from an external YAML file
-
+  # 2. Load variables from an external YAML file
   vars_files:
-
     - person.yaml
 
-
-
-  # Prompt the user to enter a variable value during execution
-
-
-
+  # 3. Prompt the user to enter a variable value
   vars_prompt:
-
     - name: person_name
-
       prompt: "Please enter your username"
-
       private: false
-
-
 
   tasks:
 
-    # Display the person's name using the variable
-
+    # 4. Display the person's name
     - name: Print name of person
-
       ansible.builtin.debug:
-
         msg: "Hello {{ person_name }}"
 
-
-
-      # Define a variable specifically for this task
-
+      # 5. Task-level variable
       vars:
-
         person_name: "Task-Level Satya"
