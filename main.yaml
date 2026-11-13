@@ -15,10 +15,10 @@
      
 
   # 3. Prompt the user to enter a variable value
-  vars_prompt:
-    - name: person_name
-      prompt: "Please enter your username"
-      private: false
+  # vars_prompt:
+  #   - name: person_name
+  #     prompt: "Please enter your username"
+  #     private: false
 
   tasks:
 
