@@ -12,6 +12,7 @@
   # 2. Load variables from an external YAML file
   vars_files:
     - person.yaml
+     
 
   # 3. Prompt the user to enter a variable value
   vars_prompt:
@@ -27,5 +28,5 @@
         msg: "Hello {{ person_name }}"
 
       # 5. Task-level variable
-      vars:
-        person_name: "Task-Level Satya"
+      # vars:
+      #   person_name: "Task-Level Satya"
