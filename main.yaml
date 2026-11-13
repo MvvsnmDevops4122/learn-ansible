@@ -6,8 +6,8 @@
   connection: local
 
   # 1. Play-level variable
-  vars:
-    person_name: "Play-Level Satya"
+  # vars:
+  #   person_name: "Play-Level Satya"
 
   # 2. Load variables from an external YAML file
   vars_files:
