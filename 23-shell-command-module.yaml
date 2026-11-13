@@ -1,21 +1,28 @@
+# Playbook to demonstrate command and shell modules
+
 - name: Demo on command and shell module
   hosts: local
   connection: local
+
   tasks:
-  - name: test the command module
-    #command: cat /etc/passwd | grep ec2-user
-    shell: cat /etc/passwd | grep ec2-user
-    register: ec2_user_output
+    # Test command module and shell module
+    - name: Test the command module
+      # command: cat /etc/passwd | grep ec2-user
+      shell: cat /etc/passwd | grep ec2-user  # Execute command with pipe support
+      register: ec2_user_output  # Store command output in a variable
 
-  - name: print the output
-    debug:
-     msg: "{{ ec2_user_output }}"
+    # Print the command output
+    - name: Print the output
+      debug:
+        msg: "{{ ec2_user_output }}"  # Display the registered output
 
-  - name: get the files
-    #command: ls -la >/tmp/files.txt
-    shell: ls -la >/tmp/files.txt
-    register: files_output
+    # Get the files and redirect output to a file
+    - name: Get the files
+      # command: ls -la >/tmp/files.txt
+      shell: ls -la >/tmp/files.txt  # Execute command with output redirection
+      register: files_output  # Store command result in a variable
 
-  - name: print the output of files
-    debug:
-     msg: "{{ files_output }}"
+    # Print the files command output
+    - name: Print the output of files
+      debug:
+        msg: "{{ files_output }}"  # Display the registered output
