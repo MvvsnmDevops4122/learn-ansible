@@ -5,9 +5,9 @@
    name: "satya"
    location: "hyderabad"
   tasks:
-  - name: print out
+  - name: print output
     vars:
-     name: "jeeva"
+      name: "jeeva"
     debug:
       msg: "Hi {{ name }}, I am from {{ location }}"
     
