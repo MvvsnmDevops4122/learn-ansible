@@ -15,4 +15,4 @@
 
   - name: print output
     debug:
-     msg: "{{ nginx_output }}"
+     msg: "{{ nginx_output.status.ActiveState }}"
