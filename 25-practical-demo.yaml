@@ -7,7 +7,7 @@
   tasks:
   - name: print out
     vars:
-     name "jeeva"
+     name: "jeeva"
     debug:
       msg: "Hi {{ name }}, I am from {{ location }}"
     
