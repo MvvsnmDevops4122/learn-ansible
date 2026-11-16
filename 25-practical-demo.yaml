@@ -2,14 +2,9 @@
   hosts: local
   become: yes
   tasks:
-  - name: install nginx
-    dnf:
-     name: nginx
-     state: absent
-
   - name: print gathering facts
     debug:
-     msg: "{{ ansible_facts }}"
+     msg: "{{ ansible_facts.ansible_facts }}"
     
 
   
