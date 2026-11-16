@@ -6,7 +6,7 @@
     dnf:
      name: nginx
      state: present
-     register: nginx_ouput
+    register: nginx_ouput
 
   - name: print output
     debug:
