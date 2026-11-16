@@ -1,10 +1,13 @@
-- name: demo on install nginx
+- name: demo on variables
   hosts: local
   become: yes
+  vars:
+   name: "satya"
+   location: "hyderabad"
   tasks:
-  - name: print gathering facts
+  - name: print out
     debug:
-     msg: "{{ ansible_facts.default_ipv4.address }}"
+     msg: "Hi {{ name }}, I am from {{ location }}"
     
 
   
