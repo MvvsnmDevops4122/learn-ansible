@@ -1,16 +1,19 @@
-- name: demo on variables
+
+- name: Demo on variables
   hosts: local
   become: yes
+
   vars_prompt:
-  - person: name
-    prompt: Please enter name of person
-  - place: location
-    prompt: Please enter name of location
-   
+    - name: person
+      prompt: Please enter name of person
+
+    - name: place
+      prompt: Please enter name of location
+
   tasks:
-  - name: print output
-    debug:
-      msg: "Hi {{ name }}, I am from {{ location }}"
+    - name: Print output
+      debug:
+        msg: "Hi {{ person }}, I am from {{ place }}"
     
 
   
