@@ -1,13 +1,15 @@
 - name: demo on variables
   hosts: local
   become: yes
-  vars:
-   name: "satya"
-   location: "hyderabad"
+  vars_prompts:
+   person: name
+   Please enter name of person:
+   place: location
+   Please enter name of location:
+
+   
   tasks:
   - name: print output
-    vars:
-      name: "jeeva"
     debug:
       msg: "Hi {{ name }}, I am from {{ location }}"
     
