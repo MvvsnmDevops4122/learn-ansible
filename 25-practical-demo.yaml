@@ -1,0 +1,8 @@
+- name: demo on install nginx
+  hosts: local
+  tasks:
+  - name: install nginx
+    dnf:
+     name: nginx
+     state: present
+     
