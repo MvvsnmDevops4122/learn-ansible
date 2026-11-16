@@ -1,0 +1,35 @@
+
+# Ansible
+
+## What is Ansible?
+
+- Ansible is an open-source configuration management and automation tool.
+- It automates server configuration and application deployment.
+- Ansible is developed using Python.
+- Ansible is platform-independent and agentless, meaning no agent needs to be installed on managed servers.
+- Ansible supports **idempotency**, meaning running the same playbook multiple times will not make unnecessary changes if everything is
+  already configured correctly.
+
+## Ansible Architecture
+
+- **Ansible Controller (Control Node):** The main server from which we run Ansible commands and playbooks.
+- **Managed Nodes (Remote Nodes):** The target servers that Ansible connects to and manages.
+- Ansible executes tasks on multiple remote servers without requiring us to connect to each server individually.
+- The Ansible Controller connects to multiple Managed Nodes and automates their configuration using SSH.
+  ![alt text](image.png)
+
+## Example
+
+Suppose we have **100 Linux servers** and want to prepare them to host an application.
+
+Ansible automates the following tasks on all 100 servers:
+
+1. Installing the required programming languages.
+2. Creating a system user.
+3. Creating an application directory.
+4. Downloading the application code.
+5. Extracting the application code.
+6. Installing application dependencies.
+7. Creating a systemd service file.
+8. Loading application data.
+9. Starting the application.
