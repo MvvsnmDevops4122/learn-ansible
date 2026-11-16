@@ -1,11 +1,11 @@
 - name: demo on variables
   hosts: local
   become: yes
-  vars_prompts:
+  vars_prompt:
    person: name
-   Please enter name of person:
+   prompt:Please enter name of person:
    place: location
-   Please enter name of location:
+   prompt:Please enter name of location:
 
    
   tasks:
