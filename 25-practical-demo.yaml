@@ -5,7 +5,12 @@
   - name: install nginx
     dnf:
      name: nginx
-     state: absent
+     state: present
+
+  - name: install nginx
+    service:
+     name: nginx
+     state: started
     register: nginx_output
 
   - name: print output
