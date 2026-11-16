@@ -2,11 +2,10 @@
   hosts: local
   become: yes
   vars_prompt:
-   person: name
-   prompt:Please enter name of person:
-   place: location
-   prompt:Please enter name of location:
-
+  - person: name
+    prompt: Please enter name of person
+  - place: location
+    prompt: Please enter name of location
    
   tasks:
   - name: print output
