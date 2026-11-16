@@ -3,17 +3,12 @@
   hosts: local
   become: yes
 
-  vars_prompt:
-    - name: person
-      prompt: Please enter name of person
-
-    - name: place
-      prompt: Please enter name of location
-
+  
   tasks:
     - name: Print output
-      debug:
-        msg: "Hi {{ person }}, I am from {{ place }}"
+      debug: |
+        msg: "Hi satya"
+        msg: "welcome"
     
 
   
