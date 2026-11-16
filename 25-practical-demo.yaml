@@ -9,7 +9,7 @@
     vars:
      name "jeeva"
     debug:
-     msg: "Hi {{ name }}, I am from {{ location }}"
+      msg: "Hi {{ name }}, I am from {{ location }}"
     
 
   
