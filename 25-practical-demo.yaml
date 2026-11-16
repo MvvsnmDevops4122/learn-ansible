@@ -6,3 +6,8 @@
     dnf:
      name: nginx
      state: present
+    register: nginx_ouput
+
+  - name: print output
+    debug:
+     msg: "{{ nginx_output }}"
