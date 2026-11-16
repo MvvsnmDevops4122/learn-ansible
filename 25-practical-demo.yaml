@@ -1,8 +1,8 @@
 - name: demo on install nginx
   hosts: local
+  become: yes
   tasks:
   - name: install nginx
     dnf:
      name: nginx
      state: present
-     
