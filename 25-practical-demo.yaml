@@ -4,7 +4,7 @@
   tasks:
   - name: print gathering facts
     debug:
-     msg: "{{ ansible_facts.ansible_facts }}"
+     msg: "{{ ansible_facts.default_ipv4.address }}"
     
 
   
