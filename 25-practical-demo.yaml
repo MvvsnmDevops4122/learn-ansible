@@ -14,3 +14,9 @@
     - name: Print the output of the command
       debug:
         msg: "{{ user_output }}"
+
+    - name: Print the output 
+      debug:
+        msg: "what next"
+
+    
