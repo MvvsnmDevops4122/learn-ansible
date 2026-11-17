@@ -7,13 +7,12 @@
    - Linux
    - GIT
    - Ansible
-
   
   tasks:
-    - name: Print output list
+    - name: convert list to string
       debug:
-        msg: "{{ item }}"
-      loop: "{{ course }}"
+        msg: " Hi my course is : {{ course | join(' ') }} "
+    
 
    
   
