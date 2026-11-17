@@ -15,8 +15,9 @@
       debug:
         msg: "{{ user_output }}"
 
-    - name: Print the output 
-      debug:
-        msg: "what next"
+    - name: Print the install git
+      dnf:
+        name: git
+        state: present
 
     
