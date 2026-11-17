@@ -1,15 +1,20 @@
 
-- name: Demo on variables
+- name: Demo on condition
   hosts: local
   become: yes
+  vars:
+   number=10
 
   
   tasks:
     - name: Print output
-      debug: 
-        msg: |
-            "Hi satya"
-            "welcome"
-    
+      debug:
+        msg: "Even number"
+      when: number%2 == 0
+    - name: Print output
+      debug:
+        msg: "Odd number"
+      when: number%2 != 0
+      
 
   
