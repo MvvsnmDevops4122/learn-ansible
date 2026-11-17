@@ -3,19 +3,17 @@
   hosts: local
   become: yes
   vars:
-   number: 10
+   course:
+   - Linux
+   - GIT
+   - Ansible
 
   
   tasks:
-    - name: Print output even
+    - name: Print output list
       debug:
-        msg: "Even number"
-      when: number % 2 == 0
-      
-    - name: Print output odd
-      debug:
-        msg: "Odd number"
-      when: number % 2 != 0
-      
+        msg: "{{ item }}"
+      loop: "{{ course }}"
 
+   
   
