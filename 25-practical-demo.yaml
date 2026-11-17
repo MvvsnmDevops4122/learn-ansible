@@ -1,16 +1,16 @@
-
-- name: Demo on condition
+- name: Demo on error handling
   hosts: local
-  become: yes
-  vars:
-   course: "ansible,k8s,linux"
-   
-  
-  tasks:
-    - name: convert list to string
-      debug:
-        msg: " Hi my course is : {{ course | split(',') }} "
-    
+  connection: local
+  become: true
 
-   
-  
+  tasks:
+    # Check whether roboshop user exists or not
+    - name: Check whether roboshop user exists or not
+      command: id roboshop
+      register: user_output  # Register command output in a variable named user_output
+     
+
+    # Print the output of the command
+    - name: Print the output of the command
+      debug:
+        msg: "{{ user_output }}"
