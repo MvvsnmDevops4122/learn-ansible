@@ -7,14 +7,15 @@
 
   
   tasks:
-    - name: Print output
+    - name: Print output even
       debug:
         msg: "Even number"
-      when: number%2 == 0
-    - name: Print output
+      when: number % 2 == 0
+      
+    - name: Print output odd
       debug:
         msg: "Odd number"
-      when: number%2 != 0
+      when: number % 2 != 0
       
 
   
