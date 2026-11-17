@@ -3,15 +3,13 @@
   hosts: local
   become: yes
   vars:
-   course:
-   - Linux
-   - GIT
-   - Ansible
+   course: "ansible,k8s,linux"
+   
   
   tasks:
     - name: convert list to string
       debug:
-        msg: " Hi my course is : {{ course | join(' ') }} "
+        msg: " Hi my course is : {{ course | split(',') }} "
     
 
    
